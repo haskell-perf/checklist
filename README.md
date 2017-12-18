@@ -14,6 +14,10 @@ GHC warns about type defaults and missing type signatures:
 
 ## Compile with `-O` or above
 
+By default GHC does not optimize your programs. Cabal and Stack enable
+this in the build process. If you're calling `ghc` directly, don't
+forget to add it.
+
 ## Have you run your code with the profiler?
 
 https://stackoverflow.com/questions/32123475/profiling-builds-with-stack
