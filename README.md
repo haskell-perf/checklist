@@ -2,16 +2,66 @@
 
 You have a Haskell program that's that performing how you'd like. Use this list to check that you've done the usual steps to performance nirvana.
 
-0. Are you compiling with -Wall? 
-0. Did you compile with `-O` or above?
-0. Have you run your code with the profiler? 
-0. Have you setup an isolated benchmark? 
-0. Have you looked at strictness of your function arguments? 
-0. Are you using the right data structure? 
-0. Are your data types strict and/or unpacked?
-0. Did you check your code isn't too polymorphic? 
-0. Do you have an explicit export list?
-0. Have you looked at the Core?
-0. Have you considered unboxed arrays/strefs/etc? 
-0. Are you using Text or ByteString instead of String?
-0. Have you considered compiling with LLVM?
+## Compiling with -Wall
+
+GHC warns about type defaults and missing type signatures:
+
+* If you let GHC default integers, it will choose `Integer`. This is
+  [10x slower](https://github.com/haskell-perf/numbers#numbers) than
+  `Int`. So make sure you explicitly choose your types.
+* You should have explicit types to not miss something obvious in the
+  types that is slow.
+
+## Compile with `-O` or above
+
+## Have you run your code with the profiler?
+
+https://stackoverflow.com/questions/32123475/profiling-builds-with-stack
+
+https://nikita-volkov.github.io/profiling-cabal-projects/
+
+https://downloads.haskell.org/~ghc/master/users-guide/profiling.html
+
+## Have you setup an isolated benchmark?
+
+http://www.serpentine.com/criterion/
+
+## Have you looked at strictness of your function arguments?
+
+https://wiki.haskell.org/Performance/Strictness
+
+## Are you using the right data structure?
+
+https://wiki.haskell.org/Performance#Specific_comparisons_of_data_structures
+
+## Are your data types strict and/or unpacked?
+
+https://wiki.haskell.org/Performance/Data_types
+
+## Did you check your code isn't too polymorphic?
+
+https://wiki.haskell.org/Performance/Overloading
+
+## Do you have an explicit export list?
+
+https://wiki.haskell.org/Performance/Modules
+
+## Have you looked at the Core?
+
+https://wiki.haskell.org/Performance/GHC#Looking_at_the_Core
+
+## Have you considered unboxed arrays/strefs/etc?
+
+https://hackage.haskell.org/package/vector-0.12.0.1/docs/Data-Vector-Unboxed.html
+
+https://hackage.haskell.org/package/mutable-containers-0.3.3/docs/Data-Mutable.html#t:URef
+
+## Are you using Text or ByteString instead of String?
+
+http://www.alexeyshmalko.com/2015/haskell-string-types/
+
+https://www.reddit.com/r/haskell/comments/120h6i/why_is_this_simple_text_processing_program_so/
+
+## Have you considered compiling with LLVM?
+
+https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/codegens.html#llvm-code-generator-fllvm
