@@ -1,6 +1,6 @@
 # The Haskell performance checklist
 
-You have a Haskell program that's that performing how you'd like. Use this list to check that you've done the usual steps to performance nirvana,
+You have a Haskell program that's that performing how you'd like. Use this list to check that you've done the usual steps to performance nirvana.
 
 0. Are you compiling with -Wall? 
 0. Did you compile with `-O` or above?
