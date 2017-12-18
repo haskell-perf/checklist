@@ -68,6 +68,10 @@ http://www.alexeyshmalko.com/2015/haskell-string-types/
 
 https://www.reddit.com/r/haskell/comments/120h6i/why_is_this_simple_text_processing_program_so/
 
+## Are you using parameters instead of mutable variables in a loop?
+
+GHC can better optimize changing parameters to a recursive function than a recursive function that writes to a mutable reference like an IORef or an STRef.
+
 ## Have you considered compiling with LLVM?
 
 https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/codegens.html#llvm-code-generator-fllvm
