@@ -2,7 +2,7 @@
 
 You have a Haskell program that's that performing how you'd like. Use this list to check that you've done the usual steps to performance nirvana.
 
-## Compiling with -Wall
+## Are you compiling with -Wall?
 
 GHC warns about type defaults and missing type signatures:
 
@@ -12,11 +12,13 @@ GHC warns about type defaults and missing type signatures:
 * You should have explicit types to not miss something obvious in the
   types that is slow.
 
-## Compile with `-O` or above
+## Are you compiling with `-O` or above?
 
 By default GHC does not optimize your programs. Cabal and Stack enable
 this in the build process. If you're calling `ghc` directly, don't
 forget to add it.
+
+Enable `-O2` for more optimizations.
 
 ## Have you run your code with the profiler?
 
