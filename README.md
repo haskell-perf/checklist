@@ -38,6 +38,11 @@ https://wiki.haskell.org/Performance/Strictness
 
 ## Are you using the right data structure?
 
+See within this GitHub org the
+[sets](https://github.com/haskell-perf/sets),
+[dictionaries](https://github.com/haskell-perf/dictionaries) and
+[sequences](https://github.com/haskell-perf/sequences) benchmarks.
+
 https://wiki.haskell.org/Performance#Specific_comparisons_of_data_structures
 
 ## Are your data types strict and/or unpacked?
@@ -67,10 +72,6 @@ https://hackage.haskell.org/package/mutable-containers-0.3.3/docs/Data-Mutable.h
 http://www.alexeyshmalko.com/2015/haskell-string-types/
 
 https://www.reddit.com/r/haskell/comments/120h6i/why_is_this_simple_text_processing_program_so/
-
-## Are you using parameters instead of mutable variables in a loop?
-
-GHC can better optimize changing parameters to a recursive function than a recursive function that writes to a mutable reference like an IORef or an STRef.
 
 ## Have you considered compiling with LLVM?
 
