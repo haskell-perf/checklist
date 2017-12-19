@@ -91,6 +91,9 @@ data structure is best for your problem:
 * [sequences](https://github.com/haskell-perf/sequences) - lists,
   vectors/arrays, sequences, etc.
 
+**Tip**: Lists are *almost always* the wrong data structure. But
+  sometimes they are.
+
 See also
 [HaskellWiki on data structures](https://wiki.haskell.org/Performance#Specific_comparisons_of_data_structures).
 
