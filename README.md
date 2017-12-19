@@ -65,7 +65,11 @@ Resources on profiling:
 
 Benchmarking is a tricky business to get right, especially when timing
 things at a smaller scale. Haskell is lucky to have a very good
-benchmarking package. Do it right and use Criterion.
+benchmarking package. If you are asking someone for help, you are
+helping them by providing benchmarks, and they are likely to ask for
+them.
+
+Do it right and use Criterion.
 
 Resources on Criterion:
 
