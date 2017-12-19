@@ -81,12 +81,18 @@ https://wiki.haskell.org/Performance/Strictness
 
 ## Are you using the right data structure?
 
-See within this GitHub org the
-[sets](https://github.com/haskell-perf/sets),
-[dictionaries](https://github.com/haskell-perf/dictionaries) and
-[sequences](https://github.com/haskell-perf/sequences) benchmarks.
+This GitHub organization provides comparative benchmarks against a few
+types of data structures. You can often use this to determine which
+data structure is best for your problem:
 
-https://wiki.haskell.org/Performance#Specific_comparisons_of_data_structures
+* [sets](https://github.com/haskell-perf/sets) - for set-like things
+* [dictionaries](https://github.com/haskell-perf/dictionaries)  -
+  dictionaries, hashmaps, maps, etc.
+* [sequences](https://github.com/haskell-perf/sequences) - lists,
+  vectors/arrays, sequences, etc.
+
+See also
+[HaskellWiki on data structures](https://wiki.haskell.org/Performance#Specific_comparisons_of_data_structures).
 
 ## Are your data types strict and/or unpacked?
 
