@@ -1,6 +1,23 @@
 # The Haskell performance checklist
 
-You have a Haskell program that's not performing how you'd like. Use this list to check that you've done the usual steps to performance nirvana.
+You have a Haskell program that's not performing how you'd like. Use
+this list to check that you've done the usual steps to performance
+nirvana.
+
+      7:## Are you compiling with -Wall?
+     17:## Are you compiling with `-O` or above?
+     25:## Have you run your code with the profiler?
+     33:## Have you setup an isolated benchmark?
+     37:## Have you looked at strictness of your function arguments?
+     41:## Are you using the right data structure?
+     50:## Are your data types strict and/or unpacked?
+     54:## Did you check your code isn't too polymorphic?
+     58:## Do you have an explicit export list?
+     62:## Have you looked at the Core?
+     66:## Have you considered unboxed arrays/strefs/etc?
+     72:## Are you using Text or ByteString instead of String?
+* Have you considered compiling with LLVM?
+
 
 ## Are you compiling with -Wall?
 
