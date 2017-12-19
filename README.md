@@ -92,18 +92,35 @@ data structure is best for your problem:
   vectors/arrays, sequences, etc.
 
 **Tip**: Lists are *almost always* the wrong data structure. But
-  sometimes they are.
+  sometimes they are the right one.
 
 See also
 [HaskellWiki on data structures](https://wiki.haskell.org/Performance#Specific_comparisons_of_data_structures).
 
 ## Are your data types strict and/or unpacked?
 
-https://wiki.haskell.org/Performance/Data_types
+By default, Haskell fields are lazy and boxed. Making them strict can
+often (not always) give them more predictable performance, and unboxed
+fields (such as integers) do not require pointer indirection.
+
+Resources on data type strictness:
+
+* [HaskellWiki on strict fields](https://wiki.haskell.org/Performance/Data_types#Unpacking_strict_fields)
 
 ## Did you check your code isn't too polymorphic?
 
-https://wiki.haskell.org/Performance/Overloading
+Code which is type-class-polymorphic, such as,
+
+``` haskell
+genericLength :: Num n => [a] -> n
+```
+
+has to accept an addictional dictionary argument for which class
+instance you want to use for `Num`. That can make things slower.
+
+Resources on overloading:
+
+* [HaskellWiki on strict fields](https://wiki.haskell.org/Performance/Overloading)
 
 ## Do you have an explicit export list?
 
@@ -111,19 +128,44 @@ https://wiki.haskell.org/Performance/Modules
 
 ## Have you looked at the Core?
 
-https://wiki.haskell.org/Performance/GHC#Looking_at_the_Core
+Haskell compiles down to a small language, Core, which represents the
+real code generated before assembly. This is where many optimization
+passes take place.
+
+Resources on core:
+
+* [HaskellWiki on core](https://wiki.haskell.org/Performance/GHC#Looking_at_the_Core)
 
 ## Have you considered unboxed arrays/strefs/etc?
 
-https://hackage.haskell.org/package/vector-0.12.0.1/docs/Data-Vector-Unboxed.html
+An array with boxed elements such as `Data.Vector.Vector a` means each
+element is a pointer to the value, instead of containing the values
+inline.
 
-https://hackage.haskell.org/package/mutable-containers-0.3.3/docs/Data-Mutable.html#t:URef
+Use an unboxed vector where you can (integers and atomic types like
+that) to avoid the pointer indirection. The vector may be stored and
+accessed in the CPU cache, avoiding mainline memory altogether.
+
+Likewise, a mutable container like `IORef` or `STRef` both contain a
+pointer rather than the value. Use `URef` for an unboxed version.
+
+* [Data.Vector.Unboxed](https://hackage.haskell.org/package/vector-0.12.0.1/docs/Data-Vector-Unboxed.html)
+* [Data.Mutable](https://hackage.haskell.org/package/mutable-containers-0.3.3/docs/Data-Mutable.html#t:URef)
 
 ## Are you using Text or ByteString instead of String?
 
-http://www.alexeyshmalko.com/2015/haskell-string-types/
+The `String` type is slow for these reasons:
 
-https://www.reddit.com/r/haskell/comments/120h6i/why_is_this_simple_text_processing_program_so/
+* It's a linked list, meaning access is linear.
+* It's not a packed representation, so each character is a separate
+  structure with a pointer to the next. It requires access to mainline
+  memory.
+* It allocates a lot more memory than packed representations.
+
+Resources on string types:
+
+* [Haskell String Types](http://www.alexeyshmalko.com/2015/haskell-string-types/)
+* [A reddit case study](https://www.reddit.com/r/haskell/comments/120h6i/why_is_this_simple_text_processing_program_so/)
 
 ## Have you considered compiling with LLVM?
 
