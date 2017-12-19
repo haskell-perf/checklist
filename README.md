@@ -50,15 +50,26 @@ Enable `-O2` for more optimizations.
 
 ## Have you run your code with the profiler?
 
-https://stackoverflow.com/questions/32123475/profiling-builds-with-stack
+Profiling is the standard way to see for expressions in your program:
 
-https://nikita-volkov.github.io/profiling-cabal-projects/
+1. How many times they run?
+2. How much do they allocate?
 
-https://downloads.haskell.org/~ghc/master/users-guide/profiling.html
+Resources on profiling:
+
+* [GHC manual on profiling](https://downloads.haskell.org/~ghc/master/users-guide/profiling.html)
+* [Profiling with Stack](https://stackoverflow.com/questions/32123475/profiling-builds-with-stack)
+* [Profiling with Cabal](https://nikita-volkov.github.io/profiling-cabal-projects/)
 
 ## Have you setup an isolated benchmark?
 
-http://www.serpentine.com/criterion/
+Benchmarking is a tricky business to get right, especially when timing
+things at a smaller scale. Haskell is lucky to have a very good
+benchmarking package. Do it right and use Criterion.
+
+Resources on Criterion:
+
+* [Criterion homepage](http://www.serpentine.com/criterion/)
 
 ## Have you looked at strictness of your function arguments?
 
