@@ -10,6 +10,8 @@ nirvana:
 
 ✓ [Have you run your code with the profiler?](#have-you-run-your-code-with-the-profiler)
 
+✓ [Have you checked for stack space leaks?](#have-you-checked-for-stack-space-leaks)
+
 ✓ [Have you setup an isolated benchmark?](#have-you-setup-an-isolated-benchmark)
 
 ✓ [Have you looked at strictness of your function arguments?](#have-you-looked-at-strictness-of-your-function-arguments)
@@ -60,6 +62,17 @@ Resources on profiling:
 * [GHC manual on profiling](https://downloads.haskell.org/~ghc/master/users-guide/profiling.html)
 * [Profiling with Stack](https://stackoverflow.com/questions/32123475/profiling-builds-with-stack)
 * [Profiling with Cabal](https://nikita-volkov.github.io/profiling-cabal-projects/)
+
+## Have you checked for stack space leaks?
+
+Most space leaks result in an excess use of stack. If you look for the
+part of the program that results in the largest stack usage, that is
+the most likely space leak, and the one that should be investigated
+first.
+
+Resource on stack space leak:
+
+* [Detecting Space Leaks](http://neilmitchell.blogspot.co.uk/2015/09/detecting-space-leaks.html?m=1)
 
 ## Have you setup an isolated benchmark?
 
