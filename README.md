@@ -15,7 +15,7 @@ nirvana.
      58:## Do you have an explicit export list?
      62:## Have you looked at the Core?
      66:## Have you considered unboxed arrays/strefs/etc?
-     72:## Are you using Text or ByteString instead of String?
+* Are you using Text or ByteString instead of String?
 * Have you considered compiling with LLVM?
 
 
