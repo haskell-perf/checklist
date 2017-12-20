@@ -46,9 +46,11 @@ GHC warns about type defaults and missing type signatures:
 
 By default GHC does not optimize your programs. Cabal and Stack enable
 this in the build process. If you're calling `ghc` directly, don't
-forget to add it.
+forget to add `-O`.
 
-Enable `-O2` for more optimizations.
+Enable `-O2` for serious, non-dangerous optimizations.
+
+* [GHC manual on optimization flags](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/using-optimisation.html#o-convenient-packages-of-optimisation-flags)
 
 ## Have you run your code with the profiler?
 
