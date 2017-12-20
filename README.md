@@ -133,7 +133,7 @@ instance you want to use for `Num`. That can make things slower.
 
 Resources on overloading:
 
-* [HaskellWiki on strict fields](https://wiki.haskell.org/Performance/Overloading)
+* [HaskellWiki on overloading](https://wiki.haskell.org/Performance/Overloading)
 
 ## Do you have an explicit export list?
 
