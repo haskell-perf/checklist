@@ -130,7 +130,7 @@ Code which is type-class-polymorphic, such as,
 genericLength :: Num n => [a] -> n
 ```
 
-has to accept an addictional dictionary argument for which class
+has to accept an additional dictionary argument for which class
 instance you want to use for `Num`. That can make things slower.
 
 Resources on overloading:
