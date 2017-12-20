@@ -181,7 +181,7 @@ Resources on string types:
 
 * [Haskell String Types](http://www.alexeyshmalko.com/2015/haskell-string-types/)
 
-Case studis:
+Case studies:
 
 * [A reddit case study](https://www.reddit.com/r/haskell/comments/120h6i/why_is_this_simple_text_processing_program_so/)
 
