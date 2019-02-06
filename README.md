@@ -65,6 +65,14 @@ Resources on profiling:
 * [Profiling with Stack](https://stackoverflow.com/questions/32123475/profiling-builds-with-stack)
 * [Profiling with Cabal](https://nikita-volkov.github.io/profiling-cabal-projects/)
 
+## Did you try weighing your operations?
+
+Check that your operations aren't allocating too much or more than you'd expect:
+
+https://github.com/fpco/weigh#readme
+
+Allocating in GC is claimed to be "fast" but not allocating is always faster.
+
 ## Have you checked for stack space leaks?
 
 Most space leaks result in an excess use of stack. If you look for the
