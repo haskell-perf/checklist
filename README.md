@@ -147,6 +147,8 @@ Resources on overloading:
 
 ## Do you have an explicit export list?
 
+This is a suggestion from the HaskellWiki, but I believe it's based on out of date information about how GHC does inlining. It's left here for interested parties, however.
+
 https://wiki.haskell.org/Performance/Modules
 
 ## Have you looked at the Core?
