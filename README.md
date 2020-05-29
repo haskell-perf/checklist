@@ -4,6 +4,8 @@ You have a Haskell program that's not performing how you'd like. Use
 this list to check that you've done the usual steps to performance
 nirvana:
 
+✓ [Are you compiling it?](#are-you-compiling-it)
+
 ✓ [Are you compiling with -Wall?](#are-you-compiling-with--wall)
 
 ✓ [Are you compiling with `-O` or above?](#are-you-compiling-with--o-or-above)
@@ -31,6 +33,12 @@ nirvana:
 ✓ [Are you using Text or ByteString instead of String?](#are-you-using-text-or-bytestring-instead-of-string)
 
 ✓ [Have you considered compiling with LLVM?](#have-you-considered-compiling-with-llvm)
+
+## Are you compiling it?
+
+Running code in GHCi's interpreter will always be much slower than compiling it to a binary. 
+
+Make sure you're compiling your code with `ghc`.
 
 ## Are you compiling with -Wall?
 
